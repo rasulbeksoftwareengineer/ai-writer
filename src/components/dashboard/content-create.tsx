@@ -4,6 +4,7 @@ import { Textarea } from '@/components/ui/textarea.tsx';
 import { Button } from '@/components/ui/button.tsx';
 import { FormEvent, useState } from 'react';
 import { Loader2 } from 'lucide-react';
+import { generateArticle } from '@/utils/openai.ts';
 
 export default function ContentCreate() {
   const [isLoading, setIsLoading] = useState(false);
@@ -11,10 +12,12 @@ export default function ContentCreate() {
     title: '',
     description: '',
   });
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setIsLoading(true);
-    console.log(form);
+    const result = await generateArticle(form.title, form.description);
+    console.log(result);
+    setIsLoading(false);
   };
 
   const handleChange = (
