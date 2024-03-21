@@ -8,9 +8,19 @@ import {
 import { Button } from '@/components/ui/button.tsx';
 import { Bars3Icon } from '@heroicons/react/16/solid';
 import { useAppContext } from '@/contexts/app.context.tsx';
+import { useAuthContext } from '@/contexts/auth.context.tsx';
+import { useNavigate } from 'react-router-dom';
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const { toggleSidebar } = useAppContext();
+  const { user, logoutUser } = useAuthContext();
+
+  const handleLogout = () => {
+    logoutUser();
+    navigate('/auth/login');
+  };
+
   return (
     <div className="border-b">
       <nav className="flex items-center justify-between p-4 h-16">
@@ -26,11 +36,11 @@ export default function Navbar() {
         </div>
         <div>
           <DropdownMenu>
-            <DropdownMenuTrigger>Ulugbek</DropdownMenuTrigger>
+            <DropdownMenuTrigger>{user?.login}</DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem>Profile</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
