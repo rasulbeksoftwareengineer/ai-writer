@@ -26,7 +26,7 @@ const resources = {
       description: 'Tavsifi',
       descriptionPlaceholder:
         'ReactJS form validatsiyasi haqida yozing. Amaliy misollar taqdim eting',
-      descriptionHint: 'Iltimos, kontent tavisifini yozing',
+      descriptionHint: 'Iltimos, kontent tavsifini yozing',
       generate: 'Yaratish',
       profile: 'Sahifa',
       logout: 'Chiqish',
