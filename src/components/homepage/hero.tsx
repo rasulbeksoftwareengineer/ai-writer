@@ -42,7 +42,7 @@ export default function Hero() {
               AI Writer Assistant: Your Ultimate Creative Sidekick!
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              ransforming Your Writing Experience with Cutting-Edge AI Support,
+              Transforming Your Writing Experience with Cutting-Edge AI Support,
               Crafted to Inspire Brilliance and Boost Productivity.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
