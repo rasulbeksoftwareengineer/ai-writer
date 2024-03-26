@@ -14,7 +14,7 @@ export default function Hero() {
         >
           <div className="flex lg:flex-1">
             <Link to="/" className="-m-1.5 p-1.5 font-semibold">
-              AI Writer Assistant
+              Super AI Writer Assistant
             </Link>
           </div>
           {user ? (
