@@ -21,7 +21,7 @@ import { Input } from '@/components/ui/input.tsx';
 import { Button } from '@/components/ui/button.tsx';
 import { useAuthContext } from '@/contexts/auth.context.tsx';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const formSchema = z
   .object({
@@ -112,8 +112,11 @@ export default function Register() {
               )}
             />
           </CardContent>
-          <CardFooter>
+          <CardFooter className="flex flex-col gap-2">
             <Button className="w-full">Create account</Button>
+            <Link to="/auth/login" className="text-center block">
+              Already have an account? Login now!
+            </Link>
           </CardFooter>
         </Card>
       </form>
