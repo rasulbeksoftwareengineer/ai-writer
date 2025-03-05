@@ -23,8 +23,8 @@ type ContentCreateFormProps = {
 };
 
 const formSchema = z.object({
-  title: z.string().min(5).max(50),
-  description: z.string().min(50).max(1000),
+  title: z.string().min(1).max(50),
+  description: z.string().min(1).max(1000),
 });
 
 export default function ContentCreateForm({
